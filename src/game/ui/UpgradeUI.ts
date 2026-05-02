@@ -1,4 +1,5 @@
 import { EntityManager } from '../EntityManager';
+import type { ElementType } from '../FiveElementsSystem';
 
 export class UpgradeUI {
   private container: HTMLElement;
@@ -119,8 +120,8 @@ export class UpgradeUI {
   private updateElementCooldowns() {
     const cooldowns = this.manager.getElementCooldowns();
     this.container.querySelectorAll('.element-btn').forEach(btn => {
-      const type = (btn as HTMLElement).dataset.type as any;
-      const cd = cooldowns[type] || 0;
+      const type = (btn as HTMLElement).dataset.type as ElementType;
+      const cd = (cooldowns as any)[type] || 0;
       const btnEl = btn as HTMLElement;
       if (cd > 0) {
         btnEl.classList.add('cooldown');

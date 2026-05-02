@@ -2,7 +2,8 @@ import { Tower } from './entities/Tower';
 import { Enemy } from './entities/Enemy';
 import { Bullet } from './entities/Bullet';
 import { ParticleSystem } from './ParticleSystem';
-import { FiveElementsSystem, ElementType } from './FiveElementsSystem';
+import { FiveElementsSystem } from './FiveElementsSystem';
+import type { ElementType } from './FiveElementsSystem';
 
 export class EntityManager {
   public tower: Tower;
